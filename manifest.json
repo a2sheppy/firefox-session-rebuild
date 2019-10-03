@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "Firefox Session Rebuild",
+  "version": "1.0",
+
+  "applications": {
+    "gecko": {
+      "id": "firefox-session-rebuild@mozilla.org",
+      "strict_min_version": "48.0a1"
+    }
+  },
+
+  "description": "Rebuilds a Firefox session (its windows and tabs) from a sessionstore backup file.",
+
+  "permissions": [
+    "tabs",
+    "activeTab"
+  ],
+
+  "browser_action": {
+    "browser_style": true,
+    "default_title": "Rebuild a Firefox Session"
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": ["file:///*.json"]
+    }
+  ]
+}
