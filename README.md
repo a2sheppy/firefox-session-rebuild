@@ -7,3 +7,8 @@ Open the sessionstore.json (or file in the same format, such as previous.json or
 in a tab in Firefox. Switch to the raw data view. Then click the toolbar button for this extension.
 
 It should then start creating new windows for each window in the JSON, adding the tabs to each one as it goes.
+
+## Dealing with .jsonlz4 files
+
+Modern Firefox compresses these JSON files using LZ4. You need to decompress them to JSON before using this tool.
+See [dejsonlz4](https://github.com/avih/dejsonlz4) for a tool that can do this.
